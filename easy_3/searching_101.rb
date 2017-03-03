@@ -52,12 +52,12 @@ end
 
 puts "================"
 # option 2
-last_num = arr.pop
+last_num = arr[-1]
 
 if arr.include?(last_num)
-  puts "The number #{last_num} appears in #{arr << last_num}."
+  puts "The number #{last_num} appears in #{arr}."
 else
-  puts "The number #{last_num} does not appear in #{arr << last_num}."
+  puts "The number #{last_num} does not appear in #{arr}."
 end
 
 =begin
