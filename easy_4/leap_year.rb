@@ -1,14 +1,14 @@
 # leap_year.rb
 
 def leap_year?(year)
-  if year % 400 == 0
+  if year % 400 == 0 && year > 1752
     true
-  elsif year % 100 == 0 && year % 400 == 0
-    true
-  elsif year % 4 == 0 && year % 100 != 0
+  elsif year % 100 == 0 && year > 1752
+    false
+  elsif year % 4 == 0 && year > 1752
     true
   else
-    false
+    year % 4 == 0
   end
 end
 
