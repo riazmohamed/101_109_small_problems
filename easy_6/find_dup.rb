@@ -1,9 +1,15 @@
 # find_dup.rb
 
+# option 1
 def find_dup(arr)
   counter = Hash.new(0)
   arr.each {|num| counter.keys.include?(num) ? counter[num] += 1 : counter[num] = 1}
   counter.select {|key, value| value > 1}.keys[0]
+end
+
+# option 2
+def find_dup2(array)
+  array.find { |element| array.count(element) == 2 }
 end
 
 p find_dup([1, 5, 3, 1]) == 1
