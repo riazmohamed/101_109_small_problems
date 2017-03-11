@@ -1,9 +1,7 @@
 # staggered_case.rb
 
 def staggered_case(str)
-  result = str.chars
-
-  result.each_with_index do |letter, index|
+  result = str.chars.each_with_index do |letter, index|
     index.even? ? letter.upcase! : letter.downcase!
   end
   result.join
