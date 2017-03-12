@@ -22,3 +22,16 @@ p substr('a')
 p substr('xyzzy')
 
 # Recursively chopping the last character and the * unpacks the multidimensional array into one dimensional array.
+
+# other option
+def sustr1(srt)
+  result = []
+  1.upto(srt.size) { |num| result << srt.slice(0, num)}
+  result
+end
+
+p sustr1('abc')
+p sustr1('a')
+p sustr1('xyzzy')
+
+# here srt.slice(0, num) can also be written as srt[0, num]
