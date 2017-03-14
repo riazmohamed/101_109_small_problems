@@ -1,14 +1,5 @@
 # diamond.rb
 
-# def diamond(number)
-#   1.upto(number) do |num|
-#     spaces_count = (number - num) / 2
-#     spaces = " " * spaces_count
-#     string = "*" * num
-#     puts "#{spaces}#{string}" if num.odd?
-#   end
-# end
-
 def diamond(number)
   counter = 0
   arr = []
@@ -26,6 +17,25 @@ def diamond(number)
     puts star.center(number)
   end
 end
+
 diamond(1)
 diamond(3)
 diamond(9)
+
+# given solution
+
+def print_row(grid_size, distance_from_center)
+  number_of_starts = grid_size - 2 * distance_from_center
+  stars = '*' * number_of_starts
+  puts stars.center(grid_size)
+end
+
+def diamond1(grid_size)
+  max_distance = (grid_size - 1) / 2
+  max_distance.downto(0) { |distance| print_row(grid_size, distance) }
+  1.upto(max_distance)   { |distance| print_row(grid_size, distance) }
+end
+
+diamond1(1)
+diamond1(3)
+diamond1(9)
