@@ -13,6 +13,18 @@ def diamond(number)
       break
     end
   end
+  arr.map! do |stars|
+    counter = 1
+    arr_star = stars.chars
+    loop do
+      break if arr_star.length == 1
+      arr_star[counter] = " "
+      counter += 1
+      break if counter == (arr_star.size - 1)
+    end
+    arr_star.join
+  end
+
   arr.each do |star|
     puts star.center(number)
   end
@@ -20,12 +32,13 @@ end
 
 diamond(1)
 diamond(3)
+diamond(5)
 diamond(9)
 
 # given solution
 
 def print_row(grid_size, distance_from_center)
-  number_of_stars = grid_size - 2 * distance_from_center
+  number_of_stars = grid_size - (2 * distance_from_center)
   stars = '*' * number_of_stars
   puts stars.center(grid_size)
 end
