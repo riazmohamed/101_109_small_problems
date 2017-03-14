@@ -52,3 +52,12 @@ end
 diamond1(1)
 diamond1(3)
 diamond1(9)
+
+# best solution
+def diamond2(n)
+  [*(1..n-1), *n.downto(1)].each { |i| puts ("*" * i).center(n) if i.odd? }
+end
+
+diamond2(1)
+diamond2(3)
+diamond2(9)
