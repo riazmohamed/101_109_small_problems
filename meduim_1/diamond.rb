@@ -25,8 +25,8 @@ diamond(9)
 # given solution
 
 def print_row(grid_size, distance_from_center)
-  number_of_starts = grid_size - 2 * distance_from_center
-  stars = '*' * number_of_starts
+  number_of_stars = grid_size - 2 * distance_from_center
+  stars = '*' * number_of_stars
   puts stars.center(grid_size)
 end
 
